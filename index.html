@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Arena</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section id="welcome-screen" class="card screen active">
+        <p class="eyebrow">FREE DAILY CHALLENGE</p>
+        <h1>Quiz Arena</h1>
+        <p class="intro">Test your general knowledge. Five questions, sixty seconds, and a place on the local leaderboard.</p>
+        <label for="player-name">What is your name?</label>
+        <input id="player-name" type="text" maxlength="20" placeholder="Enter your name" autocomplete="name" />
+        <button id="start-button" type="button">Start the quiz</button>
+        <p id="name-message" class="message" aria-live="polite"></p>
+      </section>
+
+      <section id="quiz-screen" class="card screen" aria-live="polite">
+        <div class="quiz-topbar">
+          <span id="question-count">Question 1 of 5</span>
+          <span class="timer">Time: <strong id="timer">60</strong>s</span>
+        </div>
+        <div class="progress-track" aria-hidden="true"><div id="progress-bar"></div></div>
+        <h2 id="question">Question goes here</h2>
+        <div id="answers" class="answers"></div>
+        <p id="answer-message" class="message"></p>
+        <button id="next-button" type="button" disabled>Next question</button>
+      </section>
+
+      <section id="result-screen" class="card screen">
+        <p class="eyebrow">CHALLENGE COMPLETE</p>
+        <h2>Nice work, <span id="result-name"></span>!</h2>
+        <p class="score">You scored <strong id="final-score">0</strong> / 5</p>
+        <p id="result-message" class="intro"></p>
+        <button id="play-again-button" type="button">Play again</button>
+      </section>
+
+      <section class="card leaderboard-card">
+        <div class="leaderboard-heading">
+          <div>
+            <p class="eyebrow">ON THIS DEVICE</p>
+            <h2>Leaderboard</h2>
+          </div>
+          <button id="clear-scores-button" class="text-button" type="button">Clear</button>
+        </div>
+        <ol id="leaderboard" class="leaderboard"></ol>
+        <p id="empty-leaderboard" class="muted">Play a quiz to set the first score.</p>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
